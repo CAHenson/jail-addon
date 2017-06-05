@@ -13,12 +13,6 @@ RegisterServerEvent('jail:teleportToJail')
 AddEventHandler('jail:teleportToJail', function(t, amount)
 	TriggerClientEvent('jail:teleportPlayer', t, amount)
 end)
-
-RegisterServerEvent('police:cuffGranted')
-AddEventHandler('police:cuffGranted', function(t)
-	TriggerClientEvent('chatMessage', source, 'GOVERNMENT', {255, 0, 0}, GetPlayerName(t).. " toggle cuff (except if it's a cop :3 ) !")
-	TriggerClientEvent('police:getArrested', t)
-end)
 -- jail addon end
 
 -----------------------------

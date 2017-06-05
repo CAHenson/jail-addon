@@ -10,7 +10,6 @@ Add this to line: 10
 
 -- jail addon
 local isHandCuffed = false -- Don't touch!
-local timeRemaining = 300 -- Change the time!
 -- Jail addon end
 
 ------
@@ -33,11 +32,11 @@ AddEventHandler('jail:teleportPlayer', function(amount)
 				Citizen.Wait(1000)
 				amount = amount - 1
 			end
-			-- Trigger Freedom notifcation
-			TriggerServerEvent('overNotify')
+			
 			-- Remove Weapons
 			RemoveAllPedWeapons(GetPlayerPed(-1))
 			TriggerEvent('chatMessage', '^4[JAIL]', {0,0,0}, "Your Weapons got removed for being Arrest!")
+			
 			-- Arrest
 			TriggerEvent('police:getArrested', t)
 			
